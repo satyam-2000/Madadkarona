@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       <style>
+        body{
+          background-color:rgb(161, 160, 160);
+        }
+      </style>
+    <title>Delhi Beds</title>
+</head>
+<body>
+    <h3 class="text-center mt-4">Beds Availibility In Delhi</h3>
+    <div class="container text-center">
+        <table class="table mt-4 mx-auto">
+            <thead>
+              <tr>
+                <th scope="col">Hospital</th>
+                <th scope="col">Type</th>
+                <th scope="col">Total Beds</th>
+                <th scope="col">Vacant Beds</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              {% for bed in beds %}
+              <tr>
+                
+                
+                 <th scope="row">{{bed.Hospital}}</th>
+                <td>{{bed.Type}}</td>
+                <td>{{bed.Total}}</td>
+                <td>{{bed.Vacant}}</td>
+
+                
+               
+               
+              </tr>
+              {% endfor %}
+             
+            </tbody>
+          </table>
+    </div>
+    
+</body>
+</html>

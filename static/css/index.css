@@ -1,0 +1,22 @@
+body{
+    background-color:rgb(161, 160, 160);
+}
+.navi{
+    background-color: black;
+    
+}
+
+
+
+
+.fontchanger{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.deal:hover{
+    background-color: wheat;
+} 
+
+
+
+

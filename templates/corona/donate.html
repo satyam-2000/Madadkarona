@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .ani{
+            animation: type 0.8s steps(25);
+            overflow: hidden;
+            white-space: nowrap;
+            animation-iteration-count: infinite;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            
+        }
+    
+    
+        @keyframes type{
+        0%{
+             
+             color:red;
+        }
+        50%{
+             
+             color: blue;
+        }
+        100%{
+             
+             color: black;
+        }
+    }
+        </style>
+    
+    <title>Donation</title>
+    
+</head>
+<body>
+    <h1 class="text-center fontchanger mt-2 text-info">INDIA FIGHTS CORONA</h1>
+    <div class="container row mt-4">
+        
+        <div class="col-md-5">
+            <img src="{% static "images/donation.jpg" %}" alt="Profile Picture" class=" img-fluid img-center"
+            style="max-width:95% ">
+
+        </div>
+        <div class="col-md-7">
+            <h6 class="text-center">Thank you for your contribution to the <strong>MADAD KARONA FUND</strong> Fund for India.</h6>
+            <h6 class="text-center">The COVID-19 pandemic is one of the worst health and economic crises in modern history and it continues to require the best of humanity to overcome. Your donation to this fund will help stop COVID-19's spread and protect us all.</h6>
+            <h6 class="text-center">This crisis threatens everyone's way of life, but it is especially difficult for some of us, including people with pre-existing medical conditions, older adults, individuals experiencing homelessness, refugees and migrants, wage workers, communities of color, and those with inflexible jobs.</h6>
+            <h6 class="text-center">Your <strong>Rs.19 </strong>donation to this fund will help people of India who are helpless in this pandemic. Using this fund we are planning to provide necessary items like masks, sanitizer, food etc to the poor people to stop the further spread of corona virus. </h6>
+            <h5 class="text-center mt-4 ani">Donate Rs.19 To Stop Covid-19 !!</h5>
+        </div>
+        
+           
+        
+
+        
+        
+
+    </div>
+   
+
+    
+    
+
+
+
+    <form action="https://www.example.com/payment/success/" method="POST" class="text-center ">
+        {% csrf_token %}
+    <script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_Z2HP9qq6AWn98h"
+    data-amount="1900" 
+    data-currency="INR"
+    data-order_id="{{payment.id}}"
+    data-buttontext="Donate Now"
+   
+    data-name="Donate Now"
+    data-description="MADAD KARONA"
+    data-image="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fdonation-logo-template-charity-logo-concept-vector-26209121&psig=AOvVaw3p7j2mpzkxFOngG72HIWXH&ust=1621310624158000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCMq_Hqz_ACFQAAAAAdAAAAABAD"
+    data-prefill.name="Gaurav Kumar"
+    data-prefill.email="gaurav.kumar@example.com"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+</body>
+</html>

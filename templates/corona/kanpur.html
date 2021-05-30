@@ -1,0 +1,68 @@
+{% extends 'corona/base.html' %}
+{% load static %}
+{% block body_block %}
+<div class="container mt-4">
+  <div class="text-center">
+    <a href="{% url 'corona:kbeds' %}" class="btn btn-success px-auto">Beds Availibility In Kanpur</a>
+  </div>
+  
+   
+    <h3 class="text-center text-dark mt-4 fontchanger">Oxygen Gas Cylinder Avalilibilty In Kanpur</h3>
+    
+      
+        
+          
+            
+
+       
+        
+      
+        
+        
+      
+      
+        <div class="row">
+          {% for dealer in dealers %}
+  
+          <div class="card mx-auto mt-4 bg-secondary border border-dark deal" style="width: 16rem;">
+    
+            <div class="card-body">
+              <h5 class="card-title text-center">{{dealer.name}}</h5>
+              <p class="card-text text-center"><b>{{dealer.address}}</b></p>
+              <p class="card-text text-center"><b>{{dealer.phone}}</b></p>
+              
+      
+            </div>
+          </div>
+      
+      
+      
+      
+      
+      
+          {% endfor %}
+  
+        </div>
+
+      </div>
+    
+
+   
+</div>  <!--  <p>main</p> -->
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

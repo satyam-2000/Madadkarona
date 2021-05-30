@@ -1,0 +1,199 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+    <title>corona</title>
+  </head>
+  <body>
+    <style>
+      .dropdown:hover>.dropdown-menu{
+        display: block;
+      }
+      .ani{
+        animation: colo 0.8s;
+        animation-iteration-count: infinite;
+        font-family: 'Open Sans', sans-serif;
+
+      }
+      @keyframes colo{
+        0%{
+          color: red;
+        }
+        50%{
+          color: blue;
+        }
+        100%{
+          color: black;
+        }
+        
+      }
+    </style>
+
+
+    <nav class="navbar navbar-dark navbar-expand-lg navi sticky-top ">
+      <a class="navbar-brand text-white" href="#">MADAD <SPan class="text-danger">KARONA</SPan></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-white"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-danger" href="#">{{text}}<span class="sr-only">(current)</span></a>
+          </li>
+          
+        
+         <li class="nav-item dropdown mr-4">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          City
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/">Lucknow</a>
+          <a class="dropdown-item" href="{% url 'corona:delhi' %}">Delhi</a>
+          
+          <a class="dropdown-item" href="{% url 'corona:kanpur' %}">Kanpur</a>
+          
+          
+      </li>
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+         
+         
+         
+        </ul>
+        
+      </div>
+    </nav>
+  
+     
+
+    
+    
+    <div class="container mt-4">
+     
+     
+      <div class="row">
+        <div class="col-md-7">
+            <div class="row">
+              <div class="container">
+                <h3 class="text-center">Our country needs a helping hand in these distressing times. Let's all do bit to save lives and strengthen our fight against corona virus . 😷</h3>
+                <h5 class=" mt-4 ani container text-center">WEAR MASK USE SANITIZERS</h5>
+
+              </div>
+                    
+            </div>
+            <div class="row mt-4">
+               
+           <div class="col-md-8">
+              <h5 class="text-center">We all have been affected by the current COVID-19 pandemic. However,the impact of the pandemic and its consequences are felt differently depending on our status as individuals and as members of society.I, <strong>Satyam Rastogi</strong> student of Babu Banarsi Das Institute of Technology and Management come forward to help the people by providing all the details regarding COVID-19 under one roof. </h5>
+           </div>
+           <div class="col-md-4">
+            <img src="{% static "images/satyam.jpeg" %}" alt="Profile Picture" class=" rounded-circle img-fluid border border-dark ml-4 mt-4"
+            style="max-width:85% ">
+            
+           </div>
+         
+
+            </div>
+            
+              
+        </div>
+        <div class="col-md-5 mt-4">
+            <div class="container">
+                <h3 class="text-center mr-4">Coronavirus in India <span class="text-danger ">Live</span></h3>
+            </div>
+            <div class=" container row ">
+                <div class="card bg-danger mx-2 mt-2" style="width: 11rem;">
+              
+                    <div class="card-body">
+                        
+                      <h5 class="card-title text-center">All Cases</h5>
+                      <h6 class="text-center">{{all}}</h6>
+
+                      
+                    </div>
+                  </div>
+                <div class="card bg-success mx-2 mt-2" style="width: 11rem;">
+                  
+                    <div class="card-body">
+                       
+                      <h5 class="card-title text-center">Recovered</h5>
+                      <h6 class="text-center">{{rec}}</h6>
+                      
+                    </div>
+                  </div>
+                <div class="card bg-secondary mx-2 my-2" style="width: 11rem;">
+                  
+                    <div class="card-body">
+                       
+                      <h5 class="card-title text-center">Deaths</h5>
+                      <h6 class="text-center">{{deaths}}</h6>
+                      
+                    </div>
+                  </div>
+                <div class="card bg-primary mx-2 my-2" style="width: 11rem;">
+                  
+                    <div class="card-body">
+                        
+                      <h5 class="card-title text-center">New Cases</h5>
+                      <h6  class="text-center">{{new}}</h6>
+                      
+                    </div>
+                  </div>
+                <div class="card bg-warning mx-2 my-2" style="width: 11rem;">
+                  
+                    <div class="card-body">
+                      
+                      <h5 class="card-title text-center">Critical Cases</h5>
+                      <h6 class="text-center">{{critical}}</h6>
+                      
+                    </div>
+                  </div>
+                  <h3 class="mt-4">BATTLING COVID-19 <span><a href="{% url 'corona:donate' %}" class="btn btn-primary mx-auto">Donate Now</a></span></h3> 
+                 
+            </div>
+            <hr>
+           
+            
+
+           
+            
+            
+            
+            
+        </div>
+       
+        
+    </div>
+    </div>
+
+    
+
+
+    <div class="container">
+        {% block body_block %}
+
+        {% endblock %}
+    </div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
